@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'cblog.wsgi.application'
 def get_ssm_parameters():
     ssm = boto3.client('ssm', region_name='us-east-1')
 
-    # AWS SSM Parametr define
+    # AWS SSM Parametre define
     username_param = ssm.get_parameter(Name='/sinan1/capstone/username')
     password_param = ssm.get_parameter(Name="/sinan-capstone/password", WithDecryption=True)
 
@@ -99,7 +99,7 @@ db_username, db_password = get_ssm_parameters()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'clarusway',
+        'NAME': 'capstone',
         'USER': db_username,
         'PASSWORD': db_password,
         'HOST': 'capstone.cpwwyaoheket.us-east-1.rds.amazonaws.com',
